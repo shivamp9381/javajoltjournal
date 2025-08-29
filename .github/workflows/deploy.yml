@@ -3,10 +3,10 @@ name: Deploy Docusaurus site to GitHub Pages
 on:
   push:
     branches:
-      - main  # Trigger deployment on every push to main
+      - main
 
 jobs:
-  build-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -28,12 +28,8 @@ jobs:
       - name: Build Docusaurus site
         run: npm run build
 
-      # 5️⃣ Deploy to GitHub Pages (safe latest stable tag)
+      # 5️⃣ Deploy using gh-pages package
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v6
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
-          publish_branch: gh-pages
-          user_name: "shivamp9381"
-          user_email: "shivamp9381@users.noreply.github.com"
+        run: |
+          npm install -g gh-pages
+          gh-pages -d build -b gh-pages -r https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/shivamp9381/javajoltjournal.git
