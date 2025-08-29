@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout repository
+      # 1️⃣ Checkout the repo
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -19,21 +19,22 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20
-          cache: 'npm' # Automatically caches node_modules
+          cache: 'npm'
 
       # 3️⃣ Install dependencies
       - name: Install dependencies
         run: npm ci
 
-      # 4️⃣ Build Docusaurus site
+      # 4️⃣ Build Docusaurus
       - name: Build Docusaurus site
         run: npm run build
 
-      # 5️⃣ Deploy to GitHub Pages using peaceiris action
+      # 5️⃣ Deploy using gh-pages CLI
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v6
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
-          publish_branch: gh-pages
-          keep_files: false  # Optional: removes old files before deploying
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm install -g gh-pages
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          gh-pages -d build -b gh-pages -r https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
