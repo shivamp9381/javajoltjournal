@@ -169,8 +169,8 @@ const config = {
     v4: true,
   },
 
-  url: 'https://shivamp9381.github.io',
-  baseUrl: '/javajoltjournal/',
+  url: 'https://javajoltjournal.vercel.app',
+  baseUrl: '/',
 
   organizationName: 'shivamp9381', // GitHub username
   projectName: 'javajoltjournal',  // Repo name
