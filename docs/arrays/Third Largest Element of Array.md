@@ -2,8 +2,7 @@
 id: third-largest-element
 title: Third Largest Number in Array
 sidebar_label: Third Largest Number in Array
-description: Method 1: Without Sorting (O(n) time, O(1) space).
-             Method 2: With Sorting (O(n log n))
+description: Without Sorting (O(n) time, O(1) space).
 keywords: [array, sorting, easy]
 ---
 
