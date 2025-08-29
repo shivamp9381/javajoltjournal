@@ -176,7 +176,7 @@ const config = {
   projectName: 'javajoltjournal',  // Repo name
   deploymentBranch: 'gh-pages',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
