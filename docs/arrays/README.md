@@ -1,8 +1,8 @@
 **Topic landing page** example (`docs/arrays/README.md`):
-```md
+<!-- ```md
 ---
 sidebar_position: 1
----
+--- -->
 
 
 # Arrays
