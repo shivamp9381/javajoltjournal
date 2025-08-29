@@ -28,7 +28,13 @@ jobs:
       - name: Build Docusaurus site
         run: npm run build
 
-      # 5️⃣ Deploy using gh-pages package
+      # 5️⃣ Configure Git for deployment
+      - name: Setup Git user
+        run: |
+          git config --global user.name "shivamp9381"
+          git config --global user.email "shivamp9381@users.noreply.github.com"
+
+      # 6️⃣ Deploy using gh-pages CLI
       - name: Deploy to GitHub Pages
         run: |
           npm install -g gh-pages
