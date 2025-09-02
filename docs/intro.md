@@ -9,6 +9,7 @@ Your single place for structured DSA notes & practice. Use the left sidebar or s
 
 ## Topic Index
 - [Arrays](arrays/)
+- [Hashing](hashing/)
 - [Linked List](linked-list/)
 - [Stacks & Queues](stacks-queues/)
 - [Trees](trees/)
