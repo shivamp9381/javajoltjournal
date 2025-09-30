@@ -8,7 +8,6 @@ keywords: [array, matrix , medium]
 ## Problem
 Given an integer matrix `A`, print the matrix in a spiral manner.
 
-## Problem
 ### Sample input:
 A = [{1, 2, 3, 4},
     {5, 6, 7, 8},
